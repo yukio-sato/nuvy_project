@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarrinhoNuVy</title>
+</head>
+<body>
+    <style>
+  /* ======== ESTILO GERAL ======== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(90deg, #deb4ff, #002e47);
+      color: #fff;
+    }
+
+    /* ======== HEADER ======== */
+    header {
+      background: #fff;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 50px;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    
+    .logo {
+      position: relative;
+      display: inline-block;
+    }
+
+    .logo h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      z-index: 2;
+      position: relative;
+    }
+
+    /* Nuvem abaixo do nome */
+    .nuvem {
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 25px;
+      background: #ffffff;
+      border-radius: 50px;
+      box-shadow:
+        20px 0 0 0 white,
+        40px 0 0 0 white,
+        60px 0 0 0 white;
+      z-index: 1;
+    }
+
+    .btnNav  {
+      background: linear-gradient(to left, #868686, #003e47);
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 25px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      margin-left: 10px;
+      transition: 0.3s all;
+    }
+
+    .btnNav:hover {
+      background: #3693df;
+    }
+
+    /*   PRODUTOS */
+    .clt{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .produtos {
+      display: flex;
+      justify-content: none;
+      gap: 90px;
+      flex-wrap: wrap;
+      padding: 90px;
+      width: 90%;
+    }
+
+
+    .card {
+      background: linear-gradient(135deg, #868686, #002e47);
+      border-radius: 9px;
+      width: 1000px;
+      text-align: center;
+      padding: 31px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+  width: 100%;           
+  height: 300px;        
+  object-fit:cover;
+  border-radius: 10px;
+  margin-bottom: 90px;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .card p {
+      font-weight: bold;
+      color: #cdb2f7;
+    }
+
+    /*  POPUPS  */
+    .popup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      
+      color: #fafafa;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.4);
+      width: 35%;
+      height: 50%;
+      text-align: center;
+      transition: 0.3s all;
+      z-index: 100;
+      background: linear-gradient(to right,  #868686, #003e47 );
+    }
+
+    .popup.active {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .popup h2 {
+      margin-bottom: 15px;
+    }
+
+    .popup input {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: 1px solid #3f005c;
+      outline: none;
+    }
+
+    .btnPop{
+      width: 25%;
+      height: 12.5%;
+      margin-top: 15px;
+      background: #000000;
+      border: none;
+      padding: 10px 15px;
+      color: white;
+      font-weight: bold;
+      font-size: large;
+      border-radius: 10px;
+      cursor: pointer; 
+      box-shadow: rgba(0, 0,0, 0.349) 0px 5px 5px 1px;
+      transition: 0.3s all;
+    }
+
+    .btnPop:hover {
+      background: #394386;
+    }
+
+    .vy{
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      font-size: large;
+      font-weight: bold;
+      margin-left: 90%;
+      margin-top: -12.5%;
+      cursor: pointer;
+      transition: 0.3s all;
+      box-shadow: rgba(0, 0,0, 0.349) 0px 5px 5px 1px;
+    }
+
+    .vy:hover{
+      background: #394386;
+    }
+
+    .foot{
+      height: 10%;
+      width: 100%;
+      position: fixed;
+      background: #0a0215;
+      color: #aaa;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: medium;
+      bottom: 0%;
+    }
+  </style>
+<body>
+
+  <!--  CABEÇALHO  -->
+  <header>
+    <div class="logo">
+      <h1>NuVy</h1>
+      <div class="nuvem"></div>
+    </div>
+    <nav>
+      <a href="index.html" class="btnNav" id="produtosBtn">PRODUTOS</a>
+      <button class="btnNav" id="cadastrarBtn">CADASTRAR</button>
+      <button class="btnNav" id="entrarBtn">ENTRAR</button>
+      <a href="Carrinho.html" class="btnNav" id="carrinhoBtn">CARRINHO</a>
+    </nav>
+  </header>
+</style>
+
+  <!--  PRODUTOS  -->
+    <div class="clt">
+  <section class="produtos" id="listaProdutos">
+    <div class="card">
+      <img src="https://i.pinimg.com/736x/f8/72/83/f872836d981b8ea8900f1e6f1bfdb937.jpg" alt="Teclado RGB">
+      <h3>Teclado Mecânico RGB Estético e Gamer</h3>
+      <p>Valor NuVy: R$ 199,90</p>
+    </div>
+
+  </section>
+</div>
+
+  <!-- RODAPÉ -->
+  <footer class="foot">
+    © 2025 NuVy Tech — Todos os direitos reservados.
+  </footer>
+
+  <!--  POPUPS -->
+  <div class="popup" id="popupEntrar">
+    <button class="vy" onclick="fecharPopup()">X</button>
+    <h2>Entrar</h2>
+    <input type="text" placeholder="Email"><br>
+    <input type="password" placeholder="Senha"><br>
+    <button class="btnPop" onclick="fecharPopup()">Entrar</button>
+  </div>
+
+  <div class="popup" id="popupCadastrar">
+    <button class="vy" onclick="fecharPopup()">X</button>
+    <h2>Cadastrar-se</h2>
+    <input type="text" placeholder="Nome completo"><br>
+    <input type="email" placeholder="Email"><br>
+    <input type="password" placeholder="Senha"><br>
+    <button class="btnPop" onclick="fecharPopup()">Cadastrar-se</button>
+  </div>
+  <!--  SCRIPT -->
+  <script>
+    // FILTRAR PRODUTOS
+    const busca = document.getElementById("busca");
+    const cards = document.querySelectorAll(".card");
+
+    busca.addEventListener("input", () => {
+      const termo = busca.value.toLowerCase();
+      cards.forEach(card => {
+        const titulo = card.querySelector("h3").textContent.toLowerCase();
+        card.style.display = titulo.includes(termo) ? "block" : "none";
+      });
+    });
+
+    // POPUPS DE LOGIN/CADASTRO
+    const popupEntrar = document.getElementById("popupEntrar");
+    const popupCadastrar = document.getElementById("popupCadastrar");
+
+    document.getElementById("entrarBtn").addEventListener("click", () => {
+      popupEntrar.classList.add("active");
+    });
+
+    document.getElementById("cadastrarBtn").addEventListener("click", () => {
+      popupCadastrar.classList.add("active");
+    });
+
+    function fecharPopup() {
+      popupEntrar.classList.remove("active");
+      popupCadastrar.classList.remove("active");
+    }
+  </script>
+</body>
+</html>
