@@ -4,288 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NuVy Tech</title>
-  <style>
-    
-    /* ======== ESTILO GERAL ======== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    body {
-      background: linear-gradient(90deg, #deb4ff, #002e47);
-      color: #fff;
-    }
-
-    /* ======== HEADER ======== */
-    header {
-      background: #fff;
-      color: #000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 15px 50px;
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .logo {
-      position: relative;
-      display: inline-block;
-    }
-
-    .logo h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      z-index: 2;
-      position: relative;
-    }
-
-    /* Nuvem abaixo do nome */
-    .nuvem {
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 100%;
-      height: 25px;
-      background: #ffffff;
-      border-radius: 50px;
-      box-shadow:
-        20px 0 0 0 white,
-        40px 0 0 0 white,
-        60px 0 0 0 white;
-      z-index: 1;
-    }
-
-    .btnNav  {
-      background: linear-gradient(to left, #868686, #003e47);
-      color: #fff;
-      border: none;
-      border-radius: 20px;
-      padding: 10px 25px;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      margin-left: 10px;
-      transition: 0.3s all;
-    }
-
-    .btnNav:hover {
-      background: #3693df;
-    }
-
-    /*  BARRA DE PESQUISA  */
-   
-    .search-box input {
-      background: none;
-      border: none;
-      outline: none;
-      color: #fff;
-      width: 90%;
-      font-size: 1rem;
-    }
-
-
-    .search-box button {
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: #fff;
-      font-size: 1.3rem;
-    }
-
-    .search-box {
-      background: #1d0c2e;
-      margin: 40px auto;
-      width: 80%;
-      border-radius: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 15px 25px;
-    }
-
-    #busca::placeholder{
-      color: white;
-    }
-    /*   PRODUTOS */
-    .clt{
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-
-    .produtos {
-      display: flex;
-      justify-content: center;
-      gap: 90px;
-      flex-wrap: wrap;
-      padding: 90px;
-      width: 90%;
-    }
-
-
-    .card {
-      background: linear-gradient(135deg, #868686, #002e47);
-      border-radius: 9px;
-      width: 400px;
-      text-align: center;
-      padding: 30px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card img {
-  width: 100%;           
-  height: 300px;        
-  object-fit:cover;
-  border-radius: 10px;
-  margin-bottom: 90px;
-    }
-
-    .card h3 {
-      font-size: 1rem;
-      margin-bottom: 8px;
-      color: #fff;
-    }
-
-    .card p {
-      font-weight: bold;
-      color: #cdb2f7;
-    }
-    
-/*  SETAS DECORATIVAS */
-.produtos-section {
-  position: static;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.seta {
-  font-size: 4rem;
-  color: #cdb2f7;
-  cursor: pointer;
-  user-select: none;
-  transition: 0.3s;
-  padding-bottom: 7px;
-  background-color: transparent;
-  border: transparent;
-  height: 60%;
-}
-
-.seta:hover {
-  color: #fff;
-  transform: scale(1.2);
-}
-
-.seta-esquerda {
-  position: absolute;
-  left: 100px;
-  right: 100px;
-}
-    /*  POPUPS  */
-    .popup {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0);
-      
-      color: #fafafa;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.4);
-      width: 35%;
-      height: 50%;
-      text-align: center;
-      transition: 0.3s all;
-      z-index: 100;
-      background: linear-gradient(to right,  #868686, #003e47 );
-    }
-
-    .popup.active {
-      transform: translate(-50%, -50%) scale(1);
-    }
-
-    .popup h2 {
-      margin-bottom: 15px;
-    }
-
-    .popup input {
-      width: 90%;
-      padding: 10px;
-      margin: 8px 0;
-      border-radius: 8px;
-      border: 1px solid #3f005c;
-      outline: none;
-    }
-
-    .btnPop{
-      width: 25%;
-      height: 12.5%;
-      margin-top: 15px;
-      background: #000000;
-      border: none;
-      padding: 10px 15px;
-      color: white;
-      font-weight: bold;
-      font-size: large;
-      border-radius: 10px;
-      cursor: pointer; 
-      box-shadow: rgba(0, 0,0, 0.349) 0px 5px 5px 1px;
-      transition: 0.3s all;
-    }
-
-    .btnPop:hover {
-      background: #394386;
-    }
-
-    .vy{
-      background-color: black;
-      color: white;
-      border: none;
-      border-radius: 12px;
-      padding: 10px;
-      padding-left: 20px;
-      padding-right: 20px;
-      font-size: large;
-      font-weight: bold;
-      margin-left: 90%;
-      margin-top: -12.5%;
-      cursor: pointer;
-      transition: 0.3s all;
-      box-shadow: rgba(0, 0,0, 0.349) 0px 5px 5px 1px;
-    }
-
-    .vy:hover{
-      background: #394386;
-    }
-
-    .foot{
-      height: 10%;
-      width: 100%;
-      position: fixed;
-      background: #0a0215;
-      color: #aaa;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: medium;
-      bottom: 0%;
-    }
-  </style>
+  <link rel="stylesheet" href="css/geral.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
@@ -296,44 +16,43 @@
       <div class="nuvem"></div>
     </div>
     <nav>
-      <button class="btnNav" id="produtosBtn">PRODUTOS</button>
-      <button class="btnNav" id="cadastrarBtn">CADASTRAR</button>
-      <button class="btnNav" id="entrarBtn">ENTRAR</button>
+      <a href="index.html" class="btnNav" id="produtosBtn">PRODUTOS</a>
+      <a class="btnNav" id="cadastrarBtn">CADASTRAR</a>
+      <a class="btnNav" id="entrarBtn">ENTRAR</a>
       <a href="Carrinho.html" class="btnNav" id="carrinhoBtn">CARRINHO</a>
     </nav>
   </header>
-      <!--  BARRA DE PESQUISA  -->
-      <section class="search-box">
-       <input id="busca" type="text" placeholder="Busque sua estética...">
-       <button id="searchBtn">🔍</button> 
-      </section>
+
+  <!--  BARRA DE PESQUISA  -->
+  <form class="search-box" id="busca">
+    <input id="searchInput" type="search" placeholder="Busque sua estética...">
+    <button id="searchBtn" type="submit">🔍</button> 
+  </form>
 
   <!--  PRODUTOS  -->
-    <div class="clt">
-  <section class="produtos" id="listaProdutos">
-    <div class="card">
-      <img src="https://i.pinimg.com/736x/f8/72/83/f872836d981b8ea8900f1e6f1bfdb937.jpg" alt="Teclado RGB">
-      <h3>Teclado Mecânico RGB Estético e Gamer</h3>
-      <p>Valor NuVy: R$ 199,90</p>
-    </div>
+  <div class="clt">
+    <section class="produtos" id="listaProdutos">
+      <!-- Cartões -->
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/f8/72/83/f872836d981b8ea8900f1e6f1bfdb937.jpg" alt="Teclado RGB">
+        <h3>Teclado Mecânico RGB Estético e Gamer</h3>
+        <p>Valor NuVy: R$ 199,90</p>
+      </div>
 
-    <div class="card">
-      <img src="https://i.pinimg.com/736x/2c/6a/6a/2c6a6adcefced7d386f89f39d84fe17f.jpg" alt="Microfone Rosa">
-      <h3>Microfone Rosa – Streaming</h3>
-      <p>Valor NuVy: R$ 159,90</p>
-    </div>
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/2c/6a/6a/2c6a6adcefced7d386f89f39d84fe17f.jpg" alt="Microfone Rosa">
+        <h3>Microfone Rosa – Streaming</h3>
+        <p>Valor NuVy: R$ 159,90</p>
+      </div>
 
-    <div class="card">
-      <img src="https://i.pinimg.com/1200x/dd/dc/bf/dddcbfe68957cec1bb8548cc706e1362.jpg" alt="Mouse Gamer">
-      <h3>Mouse Gamer Razer Mercury White</h3>
-      <p>Valor NuVy: R$ 189,90</p>
-        <!-- Setinha direita -->
-          <!-- Botão seta direita -->
-    </div>
-
-  </section>
-  <button class="seta direita" onclick="rolarDireita()">&#10095;</button>
-    </div>
+      <div class="card">
+        <img src="https://i.pinimg.com/1200x/dd/dc/bf/dddcbfe68957cec1bb8548cc706e1362.jpg" alt="Mouse Gamer">
+        <h3>Mouse Gamer Razer Mercury White</h3>
+        <p>Valor NuVy: R$ 189,90</p>
+      </div>
+    </section>
+    <button class="seta-direita" onclick="rolarDireita()">&#10095;</button>
+  </div>
 
 
   <!-- RODAPÉ -->
@@ -342,48 +61,61 @@
   </footer>
 
   <!--  POPUPS -->
-  <div class="popup" id="popupEntrar">
-    <button class="vy" onclick="fecharPopup()">X</button>
-    <h2>Entrar</h2>
-    <input type="text" placeholder="Email"><br>
-    <input type="password" placeholder="Senha"><br>
-    <button class="btnPop" onclick="fecharPopup()">Entrar</button>
-  </div>
+  <!-- Login  -->
+  <form class="popup" id="popupEntrar">
+    <div class="tituloForm">
+      <div class="fill"></div>
+      <h2>Entrar</h2>
+      <button type="button" class="vy" onclick="fecharPopup()">X</button>
+    </div>
+    <input type="text" placeholder="Email" required><br>
+    <input type="password" placeholder="Senha" required><br><br><br>
+    <button type="submit" class="btnPop" onclick="fecharPopup()">Entrar</button>
+  </form>
 
-  <div class="popup" id="popupCadastrar">
-    <button class="vy" onclick="fecharPopup()">X</button>
-    <h2>Cadastrar-se</h2>
-    <input type="text" placeholder="Nome completo" id="nmUser"><br>
-    <input type="email" placeholder="Email" id="emailUser"><br>
-    <input type="password" placeholder="Senha" id="senhaUser"><br>
-    <button class="btnPop" onclick="cadaster()">Cadastrar-se</button>
-  </div>
+   <!-- Cadastro  -->
+  <form class="popup" id="popupCadastrar">
+    <div class="tituloForm">
+      <div class="fill"></div>
+      <h2>Cadastrar-se</h2>
+      <button type="button" class="vy" onclick="fecharPopup()">X</button>
+    </div>
+    <input type="text" placeholder="Nome completo" id="nmUser" required><br>
+    <input type="email" placeholder="Email" id="emailUser" required><br>
+    <input type="password" placeholder="Senha" id="senhaUser" required><br>
+    <button type="submit" class="btnPop" onclick="cadaster()">Cadastrar-se</button>
+  </form>
+
   <!--  SCRIPT -->
   <script>
     // FILTRAR PRODUTOS
     const busca = document.getElementById("busca");
     const cards = document.querySelectorAll(".card");
 
-    busca.addEventListener("input", () => {
-      const termo = busca.value.toLowerCase();
+    busca.addEventListener("submit", (h) => {
+      h.preventDefault();
+      const termo = document.getElementById("searchInput").value.toLowerCase();
       cards.forEach(card => {
         const titulo = card.querySelector("h3").textContent.toLowerCase();
+        // Se tiver os caracteres inseridos, defina o seu estilo para "Block", caso contrário para "Nada"
         card.style.display = titulo.includes(termo) ? "block" : "none";
       });
     });
 
     // POPUPS DE LOGIN/CADASTRO
     const popupEntrar = document.getElementById("popupEntrar");
-    const popupCadastrar = document.getElementById("popupCadastrar"); // definindo a variavel com o document.getElementById("popupCadastrar")
+    const popupCadastrar = document.getElementById("popupCadastrar"); // Definindo a variavel com o document.getElementById("popupCadastrar")
 
+    // Abrir POPUP
     document.getElementById("entrarBtn").addEventListener("click", () => {
-      popupEntrar.classList.add("active"); // deixa visivel o form de login
+      popupEntrar.classList.add("active"); // Login
     });
 
     document.getElementById("cadastrarBtn").addEventListener("click", () => {
-      popupCadastrar.classList.add("active"); // deixa visível o form de cadastro
+      popupCadastrar.classList.add("active"); // Cadastro
     });
 
+    // Função de cadastro
     function cadaster(){
       let nm = document.getElementById("nmUser").value // recebe o valor de um Input
       let em = document.getElementById("emailUser").value
@@ -392,14 +124,15 @@
         localStorage.setItem("nmCompleto", nm); // define o local storage "nmCompleto" com a informações da variável "nm"
         localStorage.setItem("email", em);
         localStorage.setItem("senha", se);
-        alert("cadastrado com sucesso!");
-           popupEntrar.classList.remove("active");
-      popupCadastrar.classList.remove("active");
-      } else { alert("Preencha todos os campos") }
+        alert("Cadastrado com sucesso!");
+        popupEntrar.classList.remove("active");
+        popupCadastrar.classList.remove("active");
+      }
     }
 
+    // Função de fechar os POPUS
     function fecharPopup() {
-      popupEntrar.classList.remove("active"); // Deixa os forms invisiveis
+      popupEntrar.classList.remove("active");
       popupCadastrar.classList.remove("active");
     }
   </script>
