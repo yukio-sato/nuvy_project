@@ -1,13 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CarrinhoNuVy</title>
-</head>
-<body>
-    <style>
-  /* ======== ESTILO GERAL ======== */
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NuVy - Carrinho</title>
+  <style>
+     /* ======== ESTILO GERAL ======== */
     * {
       margin: 0;
       padding: 0;
@@ -23,7 +21,7 @@
     /* ======== HEADER ======== */
     header {
       background: #fff;
-      color: #000;
+      color: #000000;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -32,7 +30,7 @@
       border-bottom-right-radius: 40px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    
+
     .logo {
       position: relative;
       display: inline-block;
@@ -46,7 +44,7 @@
     }
 
     /* Nuvem abaixo do nome */
-    .nuvem {
+    nuvem {
       position: absolute;
       bottom: -10px;
       left: 0;
@@ -62,7 +60,7 @@
     }
 
     .btnNav  {
-      background: linear-gradient(to left, #868686, #003e47);
+      background: linear-gradient(to left, #f5a3a3, #003e47);
       color: #fff;
       border: none;
       border-radius: 20px;
@@ -74,142 +72,7 @@
       transition: 0.3s all;
     }
 
-    .btnNav:hover {
-      background: #3693df;
-    }
-
-    /*   PRODUTOS */
-    .clt{
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-
-    .produtos {
-      display: flex;
-      justify-content: none;
-      gap: 90px;
-      flex-wrap: wrap;
-      padding: 90px;
-      width: 90%;
-    }
-
-
-    .card {
-      background: linear-gradient(135deg, #868686, #002e47);
-      border-radius: 9px;
-      width: 1000px;
-      text-align: center;
-      padding: 31px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card img {
-  width: 100%;           
-  height: 300px;        
-  object-fit:cover;
-  border-radius: 10px;
-  margin-bottom: 90px;
-    }
-
-    .card h3 {
-      font-size: 1rem;
-      margin-bottom: 8px;
-      color: #fff;
-    }
-
-    .card p {
-      font-weight: bold;
-      color: #cdb2f7;
-    }
-
-    /*  POPUPS  */
-    .popup {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0);
-      
-      color: #fafafa;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.4);
-      width: 35%;
-      height: 50%;
-      text-align: center;
-      transition: 0.3s all;
-      z-index: 100;
-      background: linear-gradient(to right,  #868686, #003e47 );
-    }
-
-    .popup.active {
-      transform: translate(-50%, -50%) scale(1);
-    }
-
-    .popup h2 {
-      margin-bottom: 15px;
-    }
-
-    .popup input {
-      width: 90%;
-      padding: 10px;
-      margin: 8px 0;
-      border-radius: 8px;
-      border: 1px solid #3f005c;
-      outline: none;
-    }
-
-    .btnPop{
-      width: 25%;
-      height: 12.5%;
-      margin-top: 15px;
-      background: #000000;
-      border: none;
-      padding: 10px 15px;
-      color: white;
-      font-weight: bold;
-      font-size: large;
-      border-radius: 10px;
-      cursor: pointer; 
-      box-shadow: rgba(0, 0,0, 0.349) 0px 5px 5px 1px;
-      transition: 0.3s all;
-    }
-
-    .btnPop:hover {
-      background: #394386;
-    }
-
-    .vy{
-      background-color: black;
-      color: white;
-      border: none;
-      border-radius: 12px;
-      padding: 10px;
-      padding-left: 20px;
-      padding-right: 20px;
-      font-size: large;
-      font-weight: bold;
-      margin-left: 90%;
-      margin-top: -12.5%;
-      cursor: pointer;
-      transition: 0.3s all;
-      box-shadow: rgba(0, 0,0, 0.349) 0px 5px 5px 1px;
-    }
-
-    .vy:hover{
-      background: #394386;
-    }
-
-    .foot{
+.foot{
       height: 10%;
       width: 100%;
       position: fixed;
@@ -222,88 +85,638 @@
       font-size: medium;
       bottom: 0%;
     }
-  </style>
-<body>
 
-  <!--  CABEÇALHO  -->
+    .vy:hover{
+      background: #394386;
+    }
+
+    /* Header com nuvenzinha arredondada */
+    header{
+      background:var(--nav-bg);
+      color:var(--accent);
+      padding:22px 42px;
+      border-bottom-left-radius:28px;
+      border-bottom-right-radius:28px;
+      display:flex;align-items:center;justify-content:space-between;
+      box-shadow: 0 8px 18px rgba(255, 255, 255, 0.12);
+      position:relative;
+    }
+
+    header h1{
+        font-size:44px;
+        margin:0; 
+        font-weight:700
+    }
+
+    nav{
+        display:flex;
+        gap:12px
+    }
+
+    .pill{
+        background:#000;
+        padding:8px 18px;
+        border-radius:28px;
+        font-weight:800;color:#fff;
+        text-decoration:none;
+        letter-spacing:0.6px}
+
+    main{
+        flex:1;
+        display:flex;
+        align-items:flex-start;
+        justify-content:center;
+        padding:36px}
+    .frame{
+        
+      width:1100px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.14));
+      border-radius:12px;padding:26px 36px;box-shadow:0 12px 30px rgba(0,0,0,0.3);
+      position:relative;
+    }
+
+    .title{font-size:56px;
+        text-align:center;
+        font-weight:800;color:rgba(255,255,255,0.95);
+        text-shadow:0 4px 18px rgba(0,0,0,0.5)}
+
+    .cart-list{margin-top:20px}
+    .item{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      padding:18px;
+      border-radius:18px;
+      background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(0,0,0,0.18));
+      border:2px solid rgba(255,255,255,0.06);
+      margin-bottom:14px;
+      position:relative;
+    }
+    .thumb{
+        width:88px;
+        height:88px;
+        border-radius:12px;
+        overflow:hidden;
+        flex-shrink:0;
+        border:6px solid rgba(255,255,255,0.04)
+    }
+
+    .thumb img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        display:block
+    }
+
+    .meta{flex:1}
+    .meta h3{
+        margin:0;
+        font-size:18px
+    }
+
+    .meta p{
+        margin:6px 0;
+        color:var(--muted);
+        font-size:14px
+    }
+
+    .meta .price-badge{
+        display:inline-block;
+        background:rgba(255,255,255,0.06);
+        padding:8px 12px;
+        border-radius:18px;
+        font-weight:700
+    }
+    
+    .right{
+        display:flex;
+        flex-direction:column;
+        align-items:flex-end;
+        gap:8px
+    }
+
+    .qtd{
+        background:rgba(224, 18, 18, 0.03);
+        padding:6px 12px;
+        border-radius:10px
+    }
+
+    .actions{
+        display:flex;
+        gap:8px
+    }
+
+    .btn{
+        background:linear-gradient(#0f676d,#0b4046);
+        border-radius:20px;
+        padding:8px 12px;
+        color:#e9f9fa;
+        border:0;
+        cursor:pointer;
+        font-weight:700
+    }
+
+    .btn.del{
+        background:transparent;
+        color:var(--danger);
+        border:2px solid rgba(92, 39, 39, 0.12);
+        padding:6px 10px
+    }
+
+    .frete{
+        color:var(--success);
+        font-weight:800
+    }
+
+    .total-bar{
+      display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-radius:10px;
+      margin-top:18px;background:rgba(0,0,0,0.22);
+    }
+    .total-bar .cart-icon{font-size:22px;
+        margin-right:8px}
+
+    .controls{
+        display:flex;
+        gap:10px;
+        align-items:center}
+
+    .form-inline{
+        display:flex;
+        gap:8px;
+        align-items:center}
+
+    input[type="text"], input[type="number"]{
+        padding:10px;
+        border-radius:10px;
+        border:0;
+        background:rgba(255,255,255,0.03);
+        color:#fff}
+    
+
+    /* painel pedagógico */
+    .pedagogic{
+        margin-top:18px;
+        background:rgba(255,255,255,0.02);
+        padding:14px;
+        border-radius:
+        10px;color:#e6f7f8}
+
+    pre{
+        white-space:pre-wrap;
+        margin:0;
+        font-size:13px;
+        color:#f3fbff}
+
+    /* responsivo simples */
+    @media(max-width:1150px){
+      .frame{width:92%}
+      .title{font-size:36px}
+    }
+    @media(max-width:700px){
+
+      header h1{font-size:30px}
+      .title{font-size:28px}
+      .item{flex-direction:column;align-items:flex-start}
+      .right{align-self:stretch;flex-direction:row;justify-content:space-between;width:100%}
+    }
+  </style>
+</head>
+<body>
   <header>
-    <div class="logo">
-      <h1>NuVy</h1>
-      <div class="nuvem"></div>
-    </div>
+    <h1>NuVy</h1>
     <nav>
-      <a href="index.html" class="btnNav" id="produtosBtn">PRODUTOS</a>
-      <button class="btnNav" id="cadastrarBtn">CADASTRAR</button>
-      <button class="btnNav" id="entrarBtn">ENTRAR</button>
+      <a href="index.html" id="produtosBtn">PRODUTOS</button>
+      <a href="Cadastro.html" class="" id="cadastrarBtn">CADASTRAR</button>
+      <a href="entrar.html" id="entrarBtn">ENTRAR</button>
       <a href="Carrinho.html" class="btnNav" id="carrinhoBtn">CARRINHO</a>
     </nav>
+    </nav>
   </header>
-</style>
 
-  <!--  PRODUTOS  -->
-    <div class="clt">
-  <section class="produtos" id="listaProdutos">
-    <div class="card">
-      <img src="https://i.pinimg.com/736x/f8/72/83/f872836d981b8ea8900f1e6f1bfdb937.jpg" alt="Teclado RGB">
-      <h3>Teclado Mecânico RGB Estético e Gamer</h3>
-      <p>Valor NuVy: R$ 199,90</p>
-    </div>
+  <main>
+    <div class="frame" id="app">
+      <div class="title">CARRINHO</div>
 
-  </section>
-</div>
+      <!-- Formulário para inserir/atualizar produtos -->
+      <div style="margin-top:18px;display:flex;align-items:center;justify-content:space-between;gap:10px">
+        <div class="form-inline">
+          <input id="nome" type="text" placeholder="Nome do produto" />
+          <input id="preco" type="text" placeholder="Preço (ex: 199.90)" />
+          <input id="qtd" type="number" placeholder="Qtd" min="1" style="width:80px"/>
+          <button id="salvar" class="btn">Salvar</button>
+          <button id="limpar" class="btn" style="background:linear-gradient(#6a6a6a,#3c3c3c)">Limpar</button>
+        </div>
+        <div class="controls">
+          <button id="popular" class="btn" title="">Popular</button>
+        </div>
+      </div>
 
-  <!-- RODAPÉ -->
+      <!-- Lista de itens do carrinho -->
+      <div class="cart-list" id="lista"></div>
+
+      <!-- Barra de total -->
+      <div class="total-bar">
+        <div style="display:flex;align-items:center">
+          <span class="cart-icon">🛒</span>
+          <strong>Total:</strong>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <strong id="total" style="font-size:18px">R$ 0,00</strong>
+          <button id="checkout" class="btn">Finalizar</button>
+        </div>
+      </div>
+  </main>
+
   <footer class="foot">
     © 2025 NuVy Tech — Todos os direitos reservados.
   </footer>
-
-  <!--  POPUPS -->
-  <div class="popup" id="popupEntrar">
-    <button class="vy" onclick="fecharPopup()">X</button>
-    <h2>Entrar</h2>
-    <input type="text" placeholder="Email"><br>
-    <input type="password" placeholder="Senha"><br>
-    <button class="btnPop" onclick="fecharPopup()">Entrar</button>
-  </div>
-
-  <div class="popup" id="popupCadastrar">
-    <button class="vy" onclick="fecharPopup()">X</button>
-    <h2>Cadastrar-se</h2>
-    <input type="text" placeholder="Nome completo"><br>
-    <input type="email" placeholder="Email"><br>
-    <input type="password" placeholder="Senha"><br>
-    <button class="btnPop" onclick="fecharPopup()">Cadastrar-se</button>
-  </div>
-  <!--  SCRIPT -->
+  
   <script>
-    // FILTRAR PRODUTOS
-    const busca = document.getElementById("busca");
-    const cards = document.querySelectorAll(".card");
+    /* ==================================================
+       JavaScript do protótipo - com muitos comentários
+       Cobre: aritméticos, strings, atribuição, comparação,
+       incremento/decremento, lógicos, ternário, arrays,
+       for / forEach, while / do-while, if/else, switch,
+       classes, herança, instância, funções com parâmetros,
+       CRUD (inserir, ler, atualizar, deletar) em localStorage
+       ================================================== */
 
-    busca.addEventListener("input", () => {
-      const termo = busca.value.toLowerCase();
-      cards.forEach(card => {
-        const titulo = card.querySelector("h3").textContent.toLowerCase();
-        card.style.display = titulo.includes(termo) ? "block" : "none";
-      });
-    });
-
-    // POPUPS DE LOGIN/CADASTRO
-    const popupEntrar = document.getElementById("popupEntrar");
-    const popupCadastrar = document.getElementById("popupCadastrar");
-
-    document.getElementById("entrarBtn").addEventListener("click", () => {
-      popupEntrar.classList.add("active");
-    });
-
-    document.getElementById("cadastrarBtn").addEventListener("click", () => {
-      popupCadastrar.classList.add("active");
-    });
-
-    function fecharPopup() {
-      popupEntrar.classList.remove("active");
-      popupCadastrar.classList.remove("active");
+    // ---------- UTILIDADES ----------
+    function toBRL(value){
+      // formata número para R$ 1.234,56 (simples)
+      return 'R$ ' + Number(value).toFixed(2).replace('.',',');
     }
+
+    // ---------- CLASSES, HERANÇA, MÉTODOS E ATRIBUTOS ----------
+    // Classe base Produto: atributos e método subtotal
+    class Produto {
+      constructor(id, nome, preco, quantidade){
+        // atribuição: setando atributos do objeto
+        this.id = id;                     // id (string)
+        this.nome = String(nome);         // força string
+        this.preco = Number(preco);       // força número
+        this.quantidade = Number(quantidade);
+      }
+
+      // método: calcula subtotal (aritmético: multiplicação)
+      subtotal(){
+        return this.preco * this.quantidade;
+      }
+    }
+
+    // Herança: produto promocional com desconto
+    class ProdutoPromocional extends Produto {
+      constructor(id, nome, preco, quantidade, descontoPercent){
+        super(id, nome, preco, quantidade); // instancia atributos do pai
+        this.descontoPercent = Number(descontoPercent) || 0;
+      }
+      subtotal(){ // sobrescrita de método (polimorfismo)
+        const bruto = super.subtotal();
+        const desconto = bruto * (this.descontoPercent / 100); // percentual
+        return bruto - desconto;
+      }
+    }
+
+    // ---------- "Banco de dados" simples com localStorage ----------
+    // Usamos a chave 'nuvy_db' para armazenar um array JSON de produtos.
+    const DB_KEY = 'nuvy_db';
+
+    function saveDB(arr){
+      // converte para string e salva
+      localStorage.setItem(DB_KEY, JSON.stringify(arr));
+    }
+    function loadDB(){
+      const raw = localStorage.getItem(DB_KEY);
+      if(!raw) return [];
+      try {
+        const parsed = JSON.parse(raw);
+        // Voltamos a instanciar objetos com classes corretas
+        return parsed.map(o => {
+          // operador ternário: se tiver descontoPercent, cria Promo
+          return (o.descontoPercent)
+            ? new ProdutoPromocional(o.id, o.nome, o.preco, o.quantidade, o.descontoPercent)
+            : new Produto(o.id, o.nome, o.preco, o.quantidade);
+        });
+      } catch(e){
+        console.error('Erro ao carregar DB', e);
+        return [];
+      }
+    }
+
+    // ---------- REGRAS DO CARRINHO (CRUD) ----------
+    let produtos = loadDB(); // leitura inicial (leitura / apresentação de registro)
+
+    function inserirProduto(prod){
+      // INSERÇÃO: adicionar ao array e salvar
+      produtos.push(prod);
+      saveDB(produtos);
+    }
+
+    function atualizarProduto(id, dados){
+      // ATUALIZAÇÃO: encontrar índice e aplicar atribuições
+      const idx = produtos.findIndex(p => p.id === id);
+      if(idx >= 0){
+        // Object.assign faz merge de atributos (atribuição composta)
+        Object.assign(produtos[idx], dados);
+        saveDB(produtos);
+        return true;
+      }
+      return false;
+    }
+
+    function deletarProduto(id){
+      // DELEÇÃO: filtrar o array (cria novo array sem o id)
+      produtos = produtos.filter(p => p.id !== id);
+      saveDB(produtos);
+    }
+
+    // ---------- RENDER (apresentação) ----------
+    const listaEl = document.getElementById('lista');
+    const totalEl = document.getElementById('total');
+
+    function renderLista(){
+      listaEl.innerHTML = '';
+      // forEach: percorre array
+      produtos.forEach((p, index) => {
+        const div = document.createElement('div');
+        div.className = 'item';
+        div.innerHTML = `
+          <div class="thumb"><img src="${p.img || placeholderFor(p.nome)}" alt="${p.nome}"></div>
+          <div class="meta">
+            <h3>${p.nome}</h3>
+            <p><span class="price-badge">${toBRL(p.preco)}</span> &nbsp; • &nbsp; Subtotal: <strong>${toBRL(p.subtotal())}</strong></p>
+            <p class="small">${p.descontoPercent ? 'Promo: ' + p.descontoPercent + '% off' : ''}</p>
+          </div>
+          <div class="right">
+            <div class="qtd">Qtd: ${p.quantidade}</div>
+            <div class="actions">
+              <button class="btn editar" data-id="${p.id}">Editar</button>
+              <button class="btn del" data-id="${p.id}">Excluir</button>
+            </div>
+            <div class="frete">Frete Grátis</div>
+          </div>
+        `;
+        listaEl.appendChild(div);
+      });
+
+      // cálculo total (uso de laços e aritméticos)
+      let total = 0;
+      // for clássico como exemplo:
+      for(let i = 0; i < produtos.length; i++){
+        total += produtos[i].subtotal(); // incremento via +=
+      }
+      totalEl.textContent = toBRL(total);
+
+      // associar eventos (forEach para NodeList)
+      document.querySelectorAll('.btn.editar').forEach(b => b.addEventListener('click', (e)=>{
+        const id = e.currentTarget.dataset.id;
+        startEdit(id);
+      }));
+      document.querySelectorAll('.btn.del').forEach(b => b.addEventListener('click', (e)=>{
+        const id = e.currentTarget.dataset.id;
+        if(confirm('Remover este produto do carrinho?')){
+          deletarProduto(id);
+          renderLista();
+          renderConsole(); // atualizar exemplos
+        }
+      }));
+    }
+
+    // ---------- FORM LÓGICA (inserir / atualizar) ----------
+    const nomeInput = document.getElementById('nome');
+    const precoInput = document.getElementById('preco');
+    const qtdInput = document.getElementById('qtd');
+    const salvarBtn = document.getElementById('salvar');
+    const limparBtn = document.getElementById('limpar');
+    const popularBtn = document.getElementById('popular');
+
+    let editingId = null;
+
+    function clearForm(){
+      editingId = null;
+      nomeInput.value = '';
+      precoInput.value = '';
+      qtdInput.value = '';
+      salvarBtn.textContent = 'Salvar';
+    }
+
+    function startEdit(id){
+      const p = produtos.find(x => x.id === id);
+      if(!p) return;
+      editingId = id;
+      nomeInput.value = p.nome;
+      precoInput.value = p.preco;
+      qtdInput.value = p.quantidade;
+      salvarBtn.textContent = 'Atualizar';
+    }
+
+    salvarBtn.addEventListener('click', (e)=>{
+      e.preventDefault();
+      const nome = nomeInput.value.trim();
+      // aceita vírgula ou ponto
+      const preco = parseFloat(String(precoInput.value).replace(',', '.')) || 0;
+      const qtd = parseInt(qtdInput.value) || 1;
+
+      // validação básica (if / else e comparação)
+      if(!nome || preco <= 0 || qtd <= 0){
+        alert('Preencha nome, preço e quantidade válidos.');
+        return;
+      }
+
+      if(editingId){
+        // Exemplo de atribuição e atualização
+        atualizarProduto(editingId, { nome, preco, quantidade: qtd });
+        clearForm();
+        renderLista();
+        renderConsole();
+        return;
+      }
+
+      // criação de ID simples: timestamp + random (string)
+      const id = String(Date.now()) + Math.floor(Math.random() * 999);
+
+      // operador ternário: aplica promoção automática se preco > 100
+      const temPromocao = (preco > 100) ? 10 : 0;
+
+      // instancia produto ou produto promocional (exemplo de instanciação e herança)
+      const produto = (temPromocao > 0)
+        ? new ProdutoPromocional(id, nome, preco, qtd, temPromocao)
+        : new Produto(id, nome, preco, qtd);
+
+      // adicionar imagem de exemplo (URLs do Unsplash)
+      produto.img = sampleImageFor(nome);
+
+      inserirProduto(produto);
+      clearForm();
+      renderLista();
+      renderConsole();
+    });
+
+    limparBtn.addEventListener('click', (e)=>{
+      e.preventDefault();
+      clearForm();
+    });
+
+    // popular: adiciona alguns produtos de exemplo
+    popularBtn.addEventListener('click', (e)=>{
+      e.preventDefault();
+      popularExemplos();
+      renderLista();
+      renderConsole();
+    });
+
+    // ---------- Imagens de amostra ----------
+    function sampleImageFor(nome){
+      const n = nome.toLowerCase();
+      if(n.includes('teclado')) return 'https://i.pinimg.com/736x/f8/72/83/f872836d981b8ea8900f1e6f1bfdb937.jpg';
+      if(n.includes('microfone') || n.includes('microfone')) return 'https://i.pinimg.com/736x/ed/f1/a0/edf1a046d731a49345b0ca4e5e65da03.jpg';
+      if(n.includes('mouse')) return 'https://i.pinimg.com/1200x/dd/dc/bf/dddcbfe68957cec1bb8548cc706e1362.jpg';
+      return 'https://images.unsplash.com/photo-1526178616370-9c4a5f4d5f82?q=80&w=800&auto=format&fit=crop';
+    }
+    function placeholderFor(nome){
+      return sampleImageFor(nome);
+    }
+
+    // ---------- Exemplos de loops: while / do-while ----------
+    function demoLoops(){
+      let o = '';
+      // while: executa enquanto condição verdadeira (pré-teste)
+      let c = 0;
+      while(c < 2){
+        o += `while -> c=${c}\\n`;
+        c++; // incremento: ++
+      }
+      // do-while: executa ao menos uma vez (pós-teste)
+      let d = 0;
+      do {
+        o += `do-while -> d=${d}\\n`;
+        d++;
+      } while(d < 2);
+      return o;
+    }
+
+    // ---------- switch (exemplo) ----------
+    function demoSwitch(x){
+      switch(x){
+        case 'promo': return 'Cupom promocional aplicado';
+        case 'full': return 'Frete grátis';
+        default: return 'Sem condição especial';
+      }
+    }
+
+    // ---------- FUNÇÕES COM PARÂMETROS (exemplo) ----------
+    function soma(a, b){
+      return a + b;
+    }
+
+    // ---------- Exemplo final com muitos conceitos (renderConsole) ----------
+    const consoleEl = document.getElementById('console');
+
+    function renderConsole(){
+      let out = '';
+
+      // Aritméticos
+      const somaEx = 5 + 3;
+      const subEx = 10 - 4;
+      const mulEx = 6 * 7;
+      const divEx = 20 / 4;
+      const modEx = 7 % 3;
+      out += `Aritméticos: 5+3=${somaEx}, 10-4=${subEx}, 6*7=${mulEx}, 20/4=${divEx}, 7%3=${modEx}\\n\\n`;
+
+      // Strings e concatenação
+      const s1 = 'Nu', s2 = 'Vy';
+      out += `Strings: concat('${s1}','${s2}') => ${s1 + s2}\\n\\n`;
+
+      // Atribuição e comparação
+      let a = 5;
+      out += `Atribuição: a = 5 -> (a === 5)? ${a === 5}\\n\\n`;
+
+      // Incremento/Decremento
+      let inc = 0;
+      inc++; // pós-incremento
+      inc += 2; // atribuição composta
+      out += `Incremento: inc inicial 0 -> inc++ -> inc+=2 => ${inc}\\n\\n`;
+
+      // Operadores lógicos
+      const logico = (true && false) || !false;
+      out += `Lógicos: (true && false) || !false => ${logico}\\n\\n`;
+
+      // Operador ternário
+      const tern = (10 > 5) ? 'maior' : 'menor';
+      out += `Ternário: (10>5) ? 'maior' : 'menor' => ${tern}\\n\\n`;
+
+      // Arrays - declaração, push, forEach
+      const arr = [1,2,3];
+      arr.push(4); // inserção
+      out += `Array: [1,2,3] -> push(4) => [${arr}]\\n`;
+      out += 'for clássico:';
+      for(let i=0;i<3;i++){ out += ` ${i}`; }
+      out += '\\nforEach:';
+      arr.forEach((v,idx) => { out += ` idx=${idx},val=${v};`; });
+      out += '\\n\\n';
+
+      // while / do-while
+      out += demoLoops() + '\\n';
+
+      // if / else
+      const cond = 7;
+      if(cond > 10){
+        out += 'if: maior que 10\\n';
+      } else {
+        out += 'if/else: menor ou igual a 10\\n';
+      }
+
+      // switch
+      out += `switch('a') => ${demoSwitch('a')}\\n\\n`;
+
+      // função com parâmetros
+      out += `função soma(4,5) => ${soma(4,5)}\\n\\n`;
+
+      // classes e instanciação
+      const exProd = new Produto('id', 'Teclado Ex', 199.9, 1);
+      out += `Classes: new Produto('id','Teclado',199.9,1) => subtotal ${toBRL(exProd.subtotal())}\\n\\n`;
+
+      // Leitura e apresentação (localStorage)
+      out += `Banco (localStorage) => ${produtos.length} registro(s)\\n`;
+      // Mostrar os nomes dos produtos (usar forEach)
+      produtos.forEach((p, i) => { out += ` ${i+1}) ${p.nome} (${toBRL(p.preco)})\\n`; });
+
+      consoleEl.textContent = out;
+    }
+
+    // ---------- helpers para popular dados de exemplo ----------
+    function popularExemplos(){
+      // Se já existir algo, limpa e re-popula (exemplo de atribuição e uso de array)
+      produtos = []; // atribuição
+      // Exemplo de instânciação com desconto (herança)
+      produtos.push(new ProdutoPromocional(String(Date.now()) + '1', 'Teclado Mecanico RGB Estético e Gamer', 199.00, 1, 0));
+      produtos[0].img = sampleImageFor('teclado');
+
+      produtos.push(new Produto(String(Date.now()) + '2', 'Microfone Rosa - Streaming', 159.90, 1));
+      produtos[1].img = sampleImageFor('microfone');
+
+      produtos.push(new Produto(String(Date.now()) + '3', 'Mouse Razer Mercury White', 159.90, 1));
+      produtos[2].img = sampleImageFor('mouse');
+
+      saveDB(produtos);
+    }
+
+    // ---------- Inicialização ----------
+    // Se DB vazio, popular com exemplos automaticamente (exemplo de comparação)
+    if(produtos.length === 0){
+      popularExemplos();
+    }
+    renderLista();
+    renderConsole();
+
+    // ---------- Observações finais (segurança & dicas) ----------
+    /* 
+      - localStorage persiste apenas no navegador do usuário. Para DB real, substitua por backend + BD.
+      - Validar entradas e sanitizar em ambiente real para evitar XSS/SQL injection.
+      - IDs gerados aqui são simples; em produção use UUIDs ou IDs do servidor.
+      - Este protótipo tem muitos comentários para servir como material didático.
+    */
+
   </script>
 </body>
 </html>
