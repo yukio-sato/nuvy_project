@@ -66,7 +66,7 @@
     width: 27.5%;
     padding: 30px;
     text-align: justify;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.3);
     transition: 0.3s all;
     height: 500px;
     font-family: serif;
@@ -74,6 +74,7 @@
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0px 0px 15px 10px rgb(128, 225, 255, 0.8);
 }
 
 .card img {
@@ -116,99 +117,4 @@
 .seta-direita {
     position: absolute;
     right: 50px;
-}
-
-/*  POPUPS  */
-.popup {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    position: fixed;
-    top: 47.5%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    color: #fafafa;
-    padding: 1%;
-    border-radius: 15px;
-    box-shadow: 0px 0px 25px 5px rgba(0, 0, 0, 0.4);
-    width: 35%;
-    height: 65%;
-    text-align: center;
-    transition: 0.3s all;
-    z-index: 100;
-    background: linear-gradient(to right, #868686, #003e47);
-}
-
-.popup.active {
-    transform: translate(-50%, -50%) scale(1);
-}
-
-.popup h2 {
-    width: 72.5%;
-}
-
-.fill{ width: 12.5%; }
-
-.tituloForm{
-    width: 100%;
-    height: 25%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.popup input {
-    width: 90%;
-    height: 50px;
-    padding: 10px;
-    margin: 8px 0;
-    border-radius: 8px;
-    border: 1px solid #3f005c;
-    outline: none;
-}
-
-.btnPop {
-    width: 30%;
-    background: #000000;
-    border: none;
-    padding: 10px 15px;
-    color: white;
-    font-weight: bold;
-    font-size: 100%;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 100%;
-    box-shadow: rgba(0, 0, 0, 0.349) 0px 5px 5px 1px;
-    transition: 0.3s all;
-}
-
-.btnPop:hover {
-    background: #394386;
-}
-
-.vy {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 12.5%;
-    height: 50%;
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    font-size: large;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s all;
-    box-shadow: rgba(0, 0, 0, 0.349) 0px 5px 5px 1px;
-}
-
-.vy:hover {
-    background: #394386;
 }
