@@ -6,6 +6,7 @@
     <title>Entrar</title>
     <link rel="stylesheet" href="css/geral.css">
     <link rel="stylesheet" href="css/form.css">
+	<script src="js/entrar.js"></script>
   </head>
   <body>
     <!--  CABEÇALHO  -->
@@ -25,8 +26,8 @@
     <!-- Login  -->
     <form class="popup" id="popupEntrar">
       <h2>Entrar</h2>
-      <input type="email" placeholder="Email" required><br>
-      <input type="password" placeholder="Senha" required><br><br><br><br><br>
+      <input type="email" placeholder="Email" id="txtEmail" required><br>
+      <input type="password" placeholder="Senha" id="txtSenha" required><br><br>
       <button type="submit" class="btnPop">Entrar</button>
     </form>
 
@@ -36,53 +37,3 @@
     </footer>
   </body>
 </html>
-<script>
-  //script
-
-  // FILTRAR PRODUTOS
-  const busca = document.getElementById("busca");
-  const cards = document.querySelectorAll(".card");
-
-  busca.addEventListener("submit", (h) => {
-    h.preventDefault();
-    const termo = document.getElementById("searchInput").value.toLowerCase();
-    cards.forEach((card) => {
-      const titulo = card.querySelector("h3").textContent.toLowerCase();
-      // Se tiver os caracteres inseridos, defina o seu estilo para "Block", caso contrário para "Nada"
-      card.style.display = titulo.includes(termo) ? "block" : "none";
-    });
-  });
-  const popupEntrar = document.getElementById("popupEntrar");
-  const popupCadastrar = document.getElementById("popupCadastrar"); // Definindo a variavel com o document.getElementById("popupCadastrar")
-
-  // Abrir POPUP
-  document.getElementById("entrarBtn").addEventListener("click", () => {
-    popupEntrar.classList.add("active"); // Login
-  });
-
-  document.getElementById("cadastrarBtn").addEventListener("click", () => {
-    popupCadastrar.classList.add("active"); // Cadastro
-  });
-
-  // Função de cadastro
-  function cadaster() {
-    let nm = document.getElementById("nmUser").value; // recebe o valor de um Input
-    let em = document.getElementById("emailUser").value;
-    let se = document.getElementById("senhaUser").value;
-    if (nm != "" && em != "" && se != "") {
-      // verifica se todas as informações estão preenchidas
-      localStorage.setItem("nmCompleto", nm); // define o local storage "nmCompleto" com a informações da variável "nm"
-      localStorage.setItem("email", em);
-      localStorage.setItem("senha", se);
-      alert("Cadastrado com sucesso!");
-      popupEntrar.classList.remove("active");
-      popupCadastrar.classList.remove("active");
-    }
-  }
-
-  // Função de fechar os POPUS
-  function fecharPopup() {
-    popupEntrar.classList.remove("active");
-    popupCadastrar.classList.remove("active");
-  }
-</script>
