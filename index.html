@@ -6,6 +6,7 @@
   <title>NuVy Tech</title>
   <link rel="stylesheet" href="css/geral.css">
   <link rel="stylesheet" href="css/index.css">
+	<script src="js/listaProduto.js"></script>
 </head>
 <body>
 
@@ -37,19 +38,24 @@
         <img src="https://i.pinimg.com/736x/f8/72/83/f872836d981b8ea8900f1e6f1bfdb937.jpg" alt="Teclado RGB">
         <h3>Teclado Mecânico RGB Estético e Gamer</h3>
         <p>Valor NuVy: R$ 199,90</p>
+	<br>
+	<button class="btnBuy" id="0">Clique aqui para ver mais!</button>
       </div>
 
       <div class="card">
         <img src="https://i.pinimg.com/736x/2c/6a/6a/2c6a6adcefced7d386f89f39d84fe17f.jpg" alt="Microfone Rosa">
         <h3>Microfone Rosa – Streaming</h3>
         <p>Valor NuVy: R$ 159,90</p>
+	<br>
+	<button class="btnBuy" id="1">Clique aqui para ver mais!</button>
       </div>
 
       <div class="card">
         <img src="https://i.pinimg.com/1200x/dd/dc/bf/dddcbfe68957cec1bb8548cc706e1362.jpg" alt="Mouse Gamer">
         <h3>Mouse Gamer Razer Mercury White</h3>
         <p>Valor NuVy: R$ 189,90</p>
-	<button id="amogus" class="btnBuy">Teste</button>
+	<br>
+	<button class="btnBuy" id="2">Clique aqui para ver mais!</button>
       </div>
     </section>
     <button class="seta-direita" onclick="rolarDireita()">&#10095;</button>
@@ -61,55 +67,5 @@
     © 2025 NuVy Tech — Todos os direitos reservados.
   </footer>
 
-  <!--  SCRIPT -->
-  <script>
-    // FILTRAR PRODUTOS
-    const busca = document.getElementById("busca");
-    const cards = document.querySelectorAll(".card");
-
-    busca.addEventListener("submit", (h) => {
-      h.preventDefault();
-      const termo = document.getElementById("searchInput").value.toLowerCase();
-      cards.forEach(card => {
-        const titulo = card.querySelector("h3").textContent.toLowerCase();
-        // Se tiver os caracteres inseridos, defina o seu estilo para "Block", caso contrário para "Nada"
-        card.style.display = titulo.includes(termo) ? "block" : "none";
-      });
-    });
-
-    // POPUPS DE LOGIN/CADASTRO
-    const popupEntrar = document.getElementById("popupEntrar");
-    const popupCadastrar = document.getElementById("popupCadastrar"); // Definindo a variavel com o document.getElementById("popupCadastrar")
-
-    // Abrir POPUP
-    document.getElementById("entrarBtn").addEventListener("click", () => {
-      popupEntrar.classList.add("active"); // Login
-    });
-
-    document.getElementById("cadastrarBtn").addEventListener("click", () => {
-      popupCadastrar.classList.add("active"); // Cadastro
-    });
-
-    // Função de cadastro
-    function cadaster(){
-      let nm = document.getElementById("nmUser").value // recebe o valor de um Input
-      let em = document.getElementById("emailUser").value
-      let se = document.getElementById("senhaUser").value
-      if (nm != "" && em != "" && se != ""){ // verifica se todas as informações estão preenchidas
-        localStorage.setItem("nmCompleto", nm); // define o local storage "nmCompleto" com a informações da variável "nm"
-        localStorage.setItem("email", em);
-        localStorage.setItem("senha", se);
-        alert("Cadastrado com sucesso!");
-        popupEntrar.classList.remove("active");
-        popupCadastrar.classList.remove("active");
-      }
-    }
-
-    // Função de fechar os POPUS
-    function fecharPopup() {
-      popupEntrar.classList.remove("active");
-      popupCadastrar.classList.remove("active");
-    }
-  </script>
 </body>
 </html>
