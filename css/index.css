@@ -118,3 +118,15 @@
     position: absolute;
     right: 50px;
 }
+
+/* BOTÃO COMPRAR */
+.btnBuy{
+	background: linear-gradient(-285deg, lime, green);
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
+	width: 25%;
+	height: 7.5%;
+	border: none;
+	box-shadow: rgba(0,0,0,0.5) 0px 5px 5px 0.5px;
+}
