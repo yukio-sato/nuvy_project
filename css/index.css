@@ -126,7 +126,7 @@
 /* BOTÃO COMPRAR */
 .btnBuy{
 	cursor: pointer;
-	background: linear-gradient(-285deg, lime, green);
+	background: linear-gradient(-285deg, rgb(0,200,0), green);
 	color: white;
 	font-weight: bold;
 	border-radius: 10px;
