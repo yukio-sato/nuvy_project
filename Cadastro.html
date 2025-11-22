@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NuVy Tech</title>
-  <link rel="stylesheet" href="css/geral.css">
-  <link rel="stylesheet" href="css/form.css">
-	<script src="js/cadastrar.js"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NuVy Tech</title>
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/form.css">
+	  <script src="js/cadastrar.js"></script>
+    <script src="js/loginChecker.js"></script>
+  </head>
+  <body>
     <!--  CABEÇALHO  -->
-  <header>
-    <div class="logo">
-      <h1>NuVy</h1>
-      <div class="nuvem"></div>
-    </div>
-    <nav>
-      <a href="index.html" class="btnNav" id="produtosBtn">PRODUTOS</a>
-      <a href="Cadastro.html" class="btnNav" id="cadastrarBtn">CADASTRAR</a>
-      <a href="entrar.html" class="btnNav" id="entrarBtn">ENTRAR</a>
-      <a href="Carrinho.html" class="btnNav" id="carrinhoBtn">CARRINHO</a>
-    </nav>
-  </header>
-
-  <!-- Cadastro  -->
-  <form class="popup" id="popupCadastrar">
-    <h2>Cadastrar-se</h2>
-    <input type="text" placeholder="Nome completo" id="txtNome" required><br>
-    <input type="email" placeholder="Email" id="txtEmail" required><br>
-    <input type="password" placeholder="Senha" id="txtSenha" required><br>
-    <button type="submit" class="btnPop">Cadastrar-se</button>
-  </form>
-
-  <!-- RODAPÉ -->
-  <footer class="foot">
-    © 2025 NuVy Tech — Todos os direitos reservados.
-  </footer>
-</body>
+    <header>
+      <div class="logo">
+        <h1>NuVy</h1>
+        <div class="nuvem"></div>
+      </div>
+      <nav>
+        <a href="index.html" class="btnNav" id="produtosBtn">PRODUTOS</a>
+        <a href="Cadastro.html" class="btnNav" id="cadastrarBtn" hidden="true">CADASTRAR</a>
+        <a href="entrar.html" class="btnNav" id="entrarBtn" hidden="true">ENTRAR</a>
+        <a href="Carrinho.html" class="btnNav" id="carrinhoBtn">CARRINHO</a>
+        <a href="sair.html" class="btnNav" id="logoutBtn" hidden="true">DESLOGAR</a>
+      </nav>
+    </header>
+    <!-- Cadastro  -->
+    <form class="popup" id="popupCadastrar">
+      <h2>Cadastrar-se</h2>
+      <input type="text" placeholder="Nome completo" id="txtNome" required><br>
+      <input type="email" placeholder="Email" id="txtEmail" required><br>
+      <input type="password" placeholder="Senha" id="txtSenha" required><br>
+      <button type="submit" class="btnPop">Cadastrar-se</button>
+    </form>
+    <!-- RODAPÉ -->
+    <footer class="foot">
+      © 2025 NuVy Tech — Todos os direitos reservados.
+    </footer>
+  </body>
 </html>

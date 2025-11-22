@@ -8,7 +8,6 @@
 	padding: 1%;
 }
 
-
 .card {
 	display: flex;
 	flex-direction: row;
@@ -16,7 +15,7 @@
 	justify-content: start;
     background: linear-gradient(135deg, #868686, #002e47);
     border-radius: 9px;
-    width: 90%;
+    width: 85%;
     padding: 30px;
     text-align: justify;
     box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.3);
@@ -30,6 +29,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+	margin-right: 2.5%;
 }
 
 .card h3 {

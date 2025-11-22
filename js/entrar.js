@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (info && email.value == info[0]) {
 			if (senha.value == info[1]){
 				alert("Logado com sucesso!");
+				localStorage.setItem("logado",true);
+				document.location.href = "index.html";
 			} else {
 				alert("Dados Incorretos");
 			}

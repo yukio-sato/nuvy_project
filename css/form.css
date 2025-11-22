@@ -7,14 +7,10 @@
     align-items: center;
     width: 37.5%;
     height: 375px;
-    margin: 10% auto 10% auto;
+    margin: 2.5% auto 2.5% auto;
     padding: 25px;
     border-radius: 25px;
     box-shadow: 0px 0px 25px 2px black;
-}
-
-.popup.active {
-    transform: translate(-50%, -50%) scale(1);
 }
 
 .popup h2 {

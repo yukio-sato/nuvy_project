@@ -1,71 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NuVy Tech</title>
-  <link rel="stylesheet" href="css/geral.css">
-  <link rel="stylesheet" href="css/index.css">
-	<script src="js/listaProduto.js"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NuVy Tech</title>
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/index.css">
+	  <script src="js/listaProduto.js"></script>
+    <script src="js/loginChecker.js"></script>
+  </head>
+  <body>
+    <!--  CABEÇALHO  -->
+    <header>
+      <div class="logo">
+        <h1>NuVy</h1>
+        <div class="nuvem"></div>
+      </div>
+      <nav>
+        <a href="index.html" class="btnNav" id="produtosBtn">PRODUTOS</a>
+        <a href="Cadastro.html" class="btnNav" id="cadastrarBtn" hidden="true">CADASTRAR</a>
+        <a href="entrar.html" class="btnNav" id="entrarBtn" hidden="true">ENTRAR</a>
+        <a href="Carrinho.html" class="btnNav" id="carrinhoBtn">CARRINHO</a>
+        <a href="sair.html" class="btnNav" id="logoutBtn" hidden="true">DESLOGAR</a>
+      </nav>
+    </header>
 
-  <!--  CABEÇALHO  -->
-  <header>
-    <div class="logo">
-      <h1>NuVy</h1>
-      <div class="nuvem"></div>
+    <!--  BARRA DE PESQUISA  -->
+    <form class="search-box" id="busca">
+      <input id="searchInput" type="search" placeholder="Busque sua estética...">
+      <button id="searchBtn" type="submit">🔍</button> 
+    </form>
+
+    <!--  PRODUTOS  -->
+    <div class="clt">
+      <section class="produtos" id="listaProdutos">
+        <!-- Cartões -->
+        <div class="card">
+          <img src="https://i.pinimg.com/736x/f8/72/83/f872836d981b8ea8900f1e6f1bfdb937.jpg" alt="Teclado RGB">
+          <h3>Teclado Mecânico RGB Estético e Gamer</h3>
+          <p>Valor NuVy: R$ 199,90</p>
+	        <br>
+	        <button class="btnBuy" id="0">Clique aqui para ver mais!</button>
+        </div>
+
+        <div class="card">
+          <img src="https://i.pinimg.com/736x/2c/6a/6a/2c6a6adcefced7d386f89f39d84fe17f.jpg" alt="Microfone Rosa">
+          <h3>Microfone Rosa – Streaming</h3>
+          <p>Valor NuVy: R$ 159,90</p>
+	        <br>
+	        <button class="btnBuy" id="1">Clique aqui para ver mais!</button>
+        </div>
+
+        <div class="card">
+          <img src="https://i.pinimg.com/1200x/dd/dc/bf/dddcbfe68957cec1bb8548cc706e1362.jpg" alt="Mouse Gamer">
+          <h3>Mouse Gamer Razer Mercury White</h3>
+          <p>Valor NuVy: R$ 189,90</p>
+	        <br>
+	        <button class="btnBuy" id="2">Clique aqui para ver mais!</button>
+        </div>
+      </section>
+      <button class="seta-direita">&#10095;</button>
     </div>
-    <nav>
-      <a href="index.html" class="btnNav" id="produtosBtn">PRODUTOS</a>
-      <a href="Cadastro.html" class="btnNav" id="cadastrarBtn">CADASTRAR</a>
-      <a href="entrar.html" class="btnNav" id="entrarBtn">ENTRAR</a>
-      <a href="Carrinho.html" class="btnNav" id="carrinhoBtn">CARRINHO</a>
-    </nav>
-  </header>
 
-  <!--  BARRA DE PESQUISA  -->
-  <form class="search-box" id="busca">
-    <input id="searchInput" type="search" placeholder="Busque sua estética...">
-    <button id="searchBtn" type="submit">🔍</button> 
-  </form>
-
-  <!--  PRODUTOS  -->
-  <div class="clt">
-    <section class="produtos" id="listaProdutos">
-      <!-- Cartões -->
-      <div class="card">
-        <img src="https://i.pinimg.com/736x/f8/72/83/f872836d981b8ea8900f1e6f1bfdb937.jpg" alt="Teclado RGB">
-        <h3>Teclado Mecânico RGB Estético e Gamer</h3>
-        <p>Valor NuVy: R$ 199,90</p>
-	<br>
-	<button class="btnBuy" id="0">Clique aqui para ver mais!</button>
-      </div>
-
-      <div class="card">
-        <img src="https://i.pinimg.com/736x/2c/6a/6a/2c6a6adcefced7d386f89f39d84fe17f.jpg" alt="Microfone Rosa">
-        <h3>Microfone Rosa – Streaming</h3>
-        <p>Valor NuVy: R$ 159,90</p>
-	<br>
-	<button class="btnBuy" id="1">Clique aqui para ver mais!</button>
-      </div>
-
-      <div class="card">
-        <img src="https://i.pinimg.com/1200x/dd/dc/bf/dddcbfe68957cec1bb8548cc706e1362.jpg" alt="Mouse Gamer">
-        <h3>Mouse Gamer Razer Mercury White</h3>
-        <p>Valor NuVy: R$ 189,90</p>
-	<br>
-	<button class="btnBuy" id="2">Clique aqui para ver mais!</button>
-      </div>
-    </section>
-    <button class="seta-direita" onclick="rolarDireita()">&#10095;</button>
-  </div>
-
-
-  <!-- RODAPÉ -->
-  <footer class="foot">
-    © 2025 NuVy Tech — Todos os direitos reservados.
-  </footer>
-
-</body>
+    <!-- RODAPÉ -->
+    <footer class="foot">
+      © 2025 NuVy Tech — Todos os direitos reservados.
+    </footer>
+  </body>
 </html>

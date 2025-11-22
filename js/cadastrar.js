@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		h.preventDefault();
 		let tb = [email.value, password.value, nm.value];
 		localStorage.setItem("user", tb);
-		alert("HACKEADO HAHAHHAHHAH4H4HHAHHH4HH4H4H4H");
+		alert("Cadastrado com sucesso!");
+		document.location.href = "entrar.html";
 	});
 });

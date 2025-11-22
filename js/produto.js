@@ -38,11 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			document.getElementById("infoState").textContent = sold ? "Comprar" : "Esgotado"; // exibe o texto baseado no seu estado de venda
 			if (!sold){ document.getElementById("infoState").classList.replace("btnBuy","btnSold"); } // Desabilita o botão se já foi vendido
 
-			let vlTxt = this.cost.toString().replaceAll('.',','); // string do preço que substitui os pontos para virgula
-			let cond = Math.ceil(this.cost) != Math.floor(this.cost); // verificação se tem casas decimais
-			document.getElementById("infoCost").textContent = "Valor NuVy: R$"+(cond ? vlTxt.padEnd(Math.ceil(this.cost).toString().length+3,'0') : vlTxt); // texto exibido em preços com formatação de dinheiro
-
-			document.getElementById("infoDesc").textContent = this.info
+			document.getElementById("infoCost").textContent = "Valor NuVy: R$"+this.cost.toFixed(2).replaceAll('.',','); // texto exibido em preços com formatação de dinheiro
+			document.getElementById("infoDesc").textContent = this.info // descrição do item selecionado
 		}
 	}
 	if (localStorage.getItem("produtoAtual") >= 0) {
